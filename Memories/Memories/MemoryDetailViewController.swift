@@ -29,6 +29,9 @@ class MemoryDetailViewController: UIViewController {
 
     // MARK: - Properties
     
+    var memory: Memory?
+    var memoryController: MemoryController?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
