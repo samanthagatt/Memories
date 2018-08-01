@@ -9,6 +9,11 @@
 import Foundation
 
 class MemoryController {
+    
+    init() {
+        loadFromPersistentStore()
+    }
+    
     var memories: [Memory] = []
     
     // MARK: - Persistence
