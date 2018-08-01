@@ -64,9 +64,9 @@
 		D62AF728211237360024DAAB /* Memories */ = {
 			isa = PBXGroup;
 			children = (
-				D62AF74521124BD90024DAAB /* LocalNotificationHelper.swift */,
 				D62AF73B211237580024DAAB /* Memory.swift */,
 				D62AF73D211238450024DAAB /* MemoryController.swift */,
+				D62AF74521124BD90024DAAB /* LocalNotificationHelper.swift */,
 				D62AF73F211242730024DAAB /* OnboardingViewController.swift */,
 				D62AF7412112464B0024DAAB /* MemoriesTableViewController.swift */,
 				D62AF74321124A940024DAAB /* MemoryDetailViewController.swift */,

@@ -9,7 +9,7 @@
 import Foundation
 import UserNotifications
 
-class localNotificationHelper {
+class LocalNotificationHelper {
     
     func getAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
