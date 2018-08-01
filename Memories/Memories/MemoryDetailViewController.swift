@@ -7,22 +7,89 @@
 //
 
 import UIKit
+import Photos
 
-class MemoryDetailViewController: UIViewController {
+class MemoryDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
     }
 
+    
+    func updateViews() {
+        guard let thisMemory = memory else { title = "Add new memory"; return }
+        title = "Edit memory"
+        titleTextField.text = thisMemory.title
+        bodyTextView.text = thisMemory.body
+        imageView.image = UIImage(data: thisMemory.imageData)
+    }
+    
+    // MARK: - Functions
+    
+    func presentImagePickerController() {
+        let imagePickerAvailable = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
+        if imagePickerAvailable == true {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            
+            DispatchQueue.main.async {
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    // Going to close the view by itself (i.e. don't have to call this func) b/c we didn't declare it -- it came with UIImagePickerControllerDelegate for free?
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Selected image not a UIImage")
+        }
+        imageView.image = image
+    }
 
     @IBAction func addPhoto(_ sender: Any) {
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
         
+        switch authorizationStatus {
+            case .authorized:
+                presentImagePickerController()
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization { (status) in
+                    
+                    if status == .authorized {
+                        self.presentImagePickerController()
+                    }
+                }
+            default:
+                break
+        }
+//
+//        if authorizationStatus == .authorized {
+//            presentImagePickerController()
+//        } else if authorizationStatus == .notDetermined {
+//            PHPhotoLibrary.requestAuthorization { (status) in
+//
+//                if status == .authorized {
+//                    self.presentImagePickerController()
+//                }
+//            }
+//        }
     }
     
     @IBAction func save(_ sender: Any) {
-        
+        guard let title = titleTextField.text,
+            let body = bodyTextView.text,
+            let image = imageView.image,
+            let imageData = UIImagePNGRepresentation(image) else {
+                return
+        }
+        if let thisMemory = memory {
+            memoryController?.update(memory: thisMemory, title: title, body: body, imageData: imageData)
+        } else {
+            memoryController?.create(title: title, body: body, imageData: imageData)
+        }
     }
     
 

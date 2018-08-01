@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="1" y="32"/>
         </scene>
-        <!--Memories Table View Controller-->
+        <!--Memories-->
         <scene sceneID="6Uh-lx-Q88">
             <objects>
                 <tableViewController id="KEn-bC-YTY" customClass="MemoriesTableViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,8 +98,8 @@
                             <outlet property="delegate" destination="KEn-bC-YTY" id="bmu-8z-p14"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="V2f-wG-miC">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="bSa-aQ-PRi">
+                    <navigationItem key="navigationItem" title="Memories" id="V2f-wG-miC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bSa-aQ-PRi">
                             <connections>
                                 <segue destination="Svn-3G-Biz" kind="show" identifier="ShowAddNew" id="wR0-Fa-k8X"/>
                             </connections>
@@ -124,14 +124,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7cs-0h-zcx">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="212.5"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbI-gG-ji2">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbI-gG-ji2">
                                         <rect key="frame" x="0.0" y="220.5" width="343" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="Svn-3G-Biz" eventType="touchUpInside" id="JgX-ch-C8Y"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHc-0O-LkS">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHc-0O-LkS">
                                         <rect key="frame" x="0.0" y="258.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -42,10 +42,10 @@ class MemoryController {
     }
     
     func loadFromPersistentStore() {
-        guard let url = memoriesURL else { return }
-        let decoder = PropertyListDecoder()
-        
         do {
+            guard let url = memoriesURL else { return }
+            let decoder = PropertyListDecoder()
+            
             let memoriesData = try Data(contentsOf: url)
             let decodedMemories = try decoder.decode([Memory].self, from: memoriesData)
             

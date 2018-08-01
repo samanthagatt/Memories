@@ -26,7 +26,7 @@ class MemoriesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoryCell", for: indexPath)
 
         let memory = memoryController.memories[indexPath.row]
-        title = memory.title
+        cell.textLabel?.text = memory.title
         
         let image = UIImage(data: memory.imageData)
         // Basic style cells have an imageView so it's not nil right?
