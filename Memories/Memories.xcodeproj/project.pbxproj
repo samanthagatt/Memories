@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D62AF72A211237360024DAAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF729211237360024DAAB /* AppDelegate.swift */; };
-		D62AF72C211237360024DAAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF72B211237360024DAAB /* ViewController.swift */; };
 		D62AF72F211237360024DAAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AF72D211237360024DAAB /* Main.storyboard */; };
 		D62AF7312112373A0024DAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AF7302112373A0024DAAB /* Assets.xcassets */; };
 		D62AF7342112373A0024DAAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AF7322112373A0024DAAB /* LaunchScreen.storyboard */; };
 		D62AF73C211237580024DAAB /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF73B211237580024DAAB /* Memory.swift */; };
 		D62AF73E211238450024DAAB /* MemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF73D211238450024DAAB /* MemoryController.swift */; };
+		D62AF740211242730024DAAB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF73F211242730024DAAB /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D62AF726211237360024DAAB /* Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AF729211237360024DAAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D62AF72B211237360024DAAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D62AF72E211237360024DAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D62AF7302112373A0024DAAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D62AF7332112373A0024DAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D62AF7352112373A0024DAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AF73B211237580024DAAB /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		D62AF73D211238450024DAAB /* MemoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryController.swift; sourceTree = "<group>"; };
+		D62AF73F211242730024DAAB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,10 @@
 			children = (
 				D62AF73B211237580024DAAB /* Memory.swift */,
 				D62AF73D211238450024DAAB /* MemoryController.swift */,
-				D62AF729211237360024DAAB /* AppDelegate.swift */,
-				D62AF72B211237360024DAAB /* ViewController.swift */,
+				D62AF73F211242730024DAAB /* OnboardingViewController.swift */,
 				D62AF72D211237360024DAAB /* Main.storyboard */,
 				D62AF7302112373A0024DAAB /* Assets.xcassets */,
+				D62AF729211237360024DAAB /* AppDelegate.swift */,
 				D62AF7322112373A0024DAAB /* LaunchScreen.storyboard */,
 				D62AF7352112373A0024DAAB /* Info.plist */,
 			);
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62AF73C211237580024DAAB /* Memory.swift in Sources */,
-				D62AF72C211237360024DAAB /* ViewController.swift in Sources */,
+				D62AF740211242730024DAAB /* OnboardingViewController.swift in Sources */,
 				D62AF73E211238450024DAAB /* MemoryController.swift in Sources */,
 				D62AF72A211237360024DAAB /* AppDelegate.swift in Sources */,
 			);
