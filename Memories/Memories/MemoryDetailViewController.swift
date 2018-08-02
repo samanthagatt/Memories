@@ -48,6 +48,21 @@ class MemoryDetailViewController: UIViewController, UIImagePickerControllerDeleg
         }
         imageView.image = image
     }
+    
+    func showPrivacyAlert() {
+        let cancelAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Photo Library Access Denied", message: "Memories needs to access your photo library so you can add pictures to your memories. You can grant access from Settings -> Privacy -> Photos", preferredStyle: .alert)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
+    func showSaveAlert() {
+        let cancelAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Not enough information", message: "Your memory doesn't seem to be complete. In order to save a memory, please fill out all prompts.", preferredStyle: .alert)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
 
     @IBAction func addPhoto(_ sender: Any) {
         let authorizationStatus = PHPhotoLibrary.authorizationStatus()
@@ -57,25 +72,15 @@ class MemoryDetailViewController: UIViewController, UIImagePickerControllerDeleg
                 presentImagePickerController()
             case .notDetermined:
                 PHPhotoLibrary.requestAuthorization { (status) in
-                    
                     if status == .authorized {
                         self.presentImagePickerController()
+                    } else {
+                        self.showPrivacyAlert()
                     }
                 }
             default:
-                break
+                showPrivacyAlert()
         }
-//
-//        if authorizationStatus == .authorized {
-//            presentImagePickerController()
-//        } else if authorizationStatus == .notDetermined {
-//            PHPhotoLibrary.requestAuthorization { (status) in
-//
-//                if status == .authorized {
-//                    self.presentImagePickerController()
-//                }
-//            }
-//        }
     }
     
     @IBAction func save(_ sender: Any) {
@@ -83,6 +88,7 @@ class MemoryDetailViewController: UIViewController, UIImagePickerControllerDeleg
             let body = bodyTextView.text,
             let image = imageView.image,
             let imageData = UIImagePNGRepresentation(image) else {
+                showSaveAlert()
                 return
         }
         if let thisMemory = memory {
@@ -90,9 +96,10 @@ class MemoryDetailViewController: UIViewController, UIImagePickerControllerDeleg
         } else {
             memoryController?.create(title: title, body: body, imageData: imageData)
         }
+        navigationController?.popViewController(animated: true)
     }
     
-
+    
 
     // MARK: - Properties
     
